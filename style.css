@@ -27,12 +27,16 @@ body {
   border-radius: 2px;
   margin-bottom: 30px;
   text-align: center;
-  height : 360px;
+  height : 430px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 .person__header {
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Roboto', sans-serif;
   text-transform: capitalize;
   margin: 15px 0 30px;
+}
+
+img {
+  width: 200px;
 }
