@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>View Data with Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <div class="container">
+    <div class="row pen-title">
+      <div class="col">
+        <h3 class="title">{{title}}</h3>
+      </div>
+      <div class="col col-auto align-self-center text-right">
+        
+      </div>
+    </div>
+
+    <transition-group name="fade" tag="div" class="row">
+      <div v-for="(person, key) in people" :key="key" class="col-xs-6 col-md-3">
+        <div class="person">
+          <div class="person__header">
+            <img v-bind:src="person.picture.large" v-bind:alt="person" class="rounded img-thumbnail">
+            <div class="person__name">{{person.name.first}} {{person.name.last}}</div>
+          </div>
+          <div class="person__email">
+            <a v-bind:href="'mailto:' + person.email">{{person.email}}</a>
+          </div>
+          <div class="person__address">
+            <address>
+              {{person.location.street.number}}
+              {{person.location.city}}
+              {{person.location.state}}
+            </address>
+          </div>
+          <div class="gender">
+            {{person.gender}}
+        </div>
+          <div class="phone">
+              {{person.phone}}
+          </div>
+          
+        </div>
+      </div>
+    </transition-group>
+
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
